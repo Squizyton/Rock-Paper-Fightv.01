@@ -13,7 +13,7 @@ public class Player : MonoBehaviour
     public static bool PlayerWon = false;
     public bool SpellSelection = false;
     public bool FightMenu = true;
-    public float PlayerHealth = 20;
+    public static float PlayerHealth = 20;
     public static bool PlayerGotHit = false;
     public Sprite Base;
 
