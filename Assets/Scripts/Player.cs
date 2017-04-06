@@ -92,8 +92,7 @@ public class Player : MonoBehaviour
            int AttackRandomNumber = Random.Range(1,5);
             ComputerAI.TakeDamage(AttackRandomNumber);
             Debug.Log("The computer was attacked for " + AttackRandomNumber);
-            CanPick = true;
-            ComputerAI.Dontpickagain = false;
+
         }
         if (GUI.Button(new Rect(Screen.width * .15f, Screen.height * .15f, 100, 100), "Magic"))
         {
