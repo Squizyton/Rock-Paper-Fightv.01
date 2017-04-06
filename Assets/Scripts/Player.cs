@@ -74,6 +74,9 @@ public class Player : MonoBehaviour
             case IDLE_PICK:
                 renderButtons();
                 break;
+            case ATTACK:
+                renderButtons();
+                break;
 
         }
         if (PlayerCanFight == true)
