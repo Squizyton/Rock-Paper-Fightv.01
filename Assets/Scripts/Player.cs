@@ -69,7 +69,21 @@ public class Player : MonoBehaviour
     void AttackButtons()
     {
 
+        if (GUI.Button(new Rect(Screen.width * .35f, Screen.height * .35f, 100, 100), "Fight"))
+        {
+            FightMenu = false;
+            AttackRandomNumber = Random.Range(1, 5);
+            ComputerAI.ComputerGotHit = true;
+            Debug.Log("The computer was attacked for " + AttackRandomNumber);
+            CanPick = true;
+            ComputerAI.Dontpickagain = false;
+        }
+        if (GUI.Button(new Rect(Screen.width * .15f, Screen.height * .15f, 100, 100), "Magic"))
+        {
 
+            FightMenu = false;
+            SpellSelection = true;
+        }
 
     }
 
@@ -97,25 +111,6 @@ public class Player : MonoBehaviour
         {
             GUI.Label(new Rect(10, 10, 100, 20), "Player Health:" + PlayerHealth);
 
-            if (FightMenu == true)
-            {
-                if (GUI.Button(new Rect(Screen.width * .35f, Screen.height * .35f, 100, 100), "Fight"))
-                {
-                    FightMenu = false;
-                    AttackRandomNumber = Random.Range(1, 5);
-                    ComputerAI.ComputerGotHit = true;
-                    Debug.Log("The computer was attacked for " + AttackRandomNumber);
-                    CanPick = true;
-                    ComputerAI.Dontpickagain = false;
-                }
-                if (GUI.Button(new Rect(Screen.width * .15f, Screen.height * .15f, 100, 100), "Magic"))
-                {
-
-                    FightMenu = false;
-                    SpellSelection = true;
-                }
-
-            }
 
         }
 
