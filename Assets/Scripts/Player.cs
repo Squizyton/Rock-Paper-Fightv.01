@@ -88,11 +88,12 @@ public class Player : MonoBehaviour
 
         if (GUI.Button(new Rect(Screen.width * .35f, Screen.height * .35f, 100, 100), "Melee"))
         {
-            
-           int AttackRandomNumber = Random.Range(1,5);
+
+            int AttackRandomNumber = Random.Range(1, 5);
             ComputerAI.TakeDamage(AttackRandomNumber);
             Debug.Log("The computer was attacked for " + AttackRandomNumber);
-
+            state = IDLE_PICK;
+            ComputerAI.state = ComputerAI.IDLE;
         }
         if (GUI.Button(new Rect(Screen.width * .15f, Screen.height * .15f, 100, 100), "Magic"))
         {
