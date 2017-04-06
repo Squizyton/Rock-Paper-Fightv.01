@@ -21,9 +21,6 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("Please Press R for Rock,P for Paper, or S for Scizzors");
-
-
     }
 
     void Update()

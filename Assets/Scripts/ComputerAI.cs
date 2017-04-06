@@ -23,31 +23,7 @@ public class ComputerAI : MonoBehaviour
 
     void Start()
     {
-
-        RandomPicker = 0;
-
-        if (RandomPicker == 1)
-        {
-
-            Debug.Log("Computer Picked Rock");
-
-        }
-        if (RandomPicker == 2)
-        {
-
-            Debug.Log("Computer Picked Paper");
-        }
-
-        if (RandomPicker == 3)
-        {
-
-            Debug.Log("Computer Picked Scizzors");
-
-        }
-
-
     }
-
     void Update()
     {
         if (PickAgain == true)
@@ -81,7 +57,6 @@ public class ComputerAI : MonoBehaviour
                 CpuCanPick = false;
                 Dontpickagain = true;
             }
-
         }
         if (ComputerWon == true)
         {
@@ -121,10 +96,7 @@ public class ComputerAI : MonoBehaviour
     }
     void OnGUI()
     {
-
         GUI.Label(new Rect(500, 10, 100, 20), "Computer's Health:" + cpuhealth);
-
-
     }
 
 
