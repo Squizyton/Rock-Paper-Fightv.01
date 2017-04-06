@@ -29,16 +29,19 @@ public class RPSFigureOUt : MonoBehaviour
                 case playerWon:
                     Player.state = Player.ATTACK;
                     ComputerAI.state = ComputerAI.GETTING_ATTACKED;
+                    Debug.Log("player won");
                     break;
                 case computerWon:
                     ComputerAI.state = ComputerAI.ATTACK;
                     Player.state = Player.GETTING_ATTACKED;
+                    Debug.Log("comdooter won");
                     break;
                 case tie:
                     Player.state = Player.IDLE_PICK;
                     Player.currentPick = Player.PICK_NONE;
                     ComputerAI.state = ComputerAI.IDLE;
                     ComputerAI.currentPick = ComputerAI.PICK_NONE;
+                    Debug.Log("NO WINNERZ 4 U");
                     break;
             }
 
