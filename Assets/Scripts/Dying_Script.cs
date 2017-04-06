@@ -16,7 +16,7 @@ public class Dying_Script : MonoBehaviour
 
     void PlayerDying()
     {
-    //    GUI.DrawTexture(new Rect(10, 10, 60, 60), PlayerDeathText);
+        //    GUI.DrawTexture(new Rect(10, 10, 60, 60), PlayerDeathText);
     }
 
 
@@ -31,20 +31,15 @@ public class Dying_Script : MonoBehaviour
         }
         if (ComputerAI.cpuhealth <= 0)
         {
-
             ComputerAI.state = ComputerAI.DEATH;
             Death = Computer_Death;
-
-
         }
-
         switch (Death)
         {
 
             case PlayerDeath:
                 PlayerDying();
                 break;
-
         }
     }
 }

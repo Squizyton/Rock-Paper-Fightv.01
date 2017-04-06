@@ -48,9 +48,12 @@ public class ComputerAI : MonoBehaviour
 
     void Dying()
     {
+        Player.state = Player.HAS_WON;
+
+        Debug.Log("Computer is dying");
 
         GUI.DrawTexture(new Rect(Screen.width / 2 - 50, 0, 80, 50), DeathTexture);
-        if (GUI.Button(new Rect(Screen.width * .40f, Screen.height * .35f, 100, 100), "Player Again?"))
+        if (GUI.Button(new Rect(Screen.width * .40f, Screen.height * .35f, 100, 100), "PlayAgain?"))
         {
 
             Debug.Log("Play Again was Picked.");
@@ -107,71 +110,11 @@ public class ComputerAI : MonoBehaviour
                 break;
 
         }
-
-
-
-        //if (Player.PlayerIsReady == true)
-        //{
-
-        //    RandomPicker = Random.Range(1, 4);
-        //    if (RandomPicker == 1)
-        //    {
-        //        CpuRock = true;
-        //        CPUisReady = true;
-        //        CpuCanPick = false;
-        //        Dontpickagain = true;
-        //    }
-        //    if (RandomPicker == 2)
-        //    {
-        //        CpuPaper = true;
-        //        CPUisReady = true;
-        //        CpuCanPick = false;
-        //        Dontpickagain = true;
-        //    }
-        //    if (RandomPicker == 3)
-        //    {
-        //        CpuScizzors = true;
-        //        CPUisReady = true;
-        //        CpuCanPick = false;
-        //        Dontpickagain = true;
-        //    }
-        //}
-        //if (ComputerWon == true)
-        //{
-        //    if (Player.CanPick == false)
-        //    {
-        //        //This is the Computer AI battle System
-        //        //It will first check it's own health. If it then generate a random number sytem if its below a certain point
-        //        //of health. Then it will throw some dice. And If the dice equal a certain amount. It will heal.
-        //        if (cpuhealth <= 13)
-
-        //            RandomGenerator = Random.Range(1, 20);
-
-        //        if (RandomGenerator >= 14)
-        //        {
-        //            cpuhealth += Random.Range(1, 5);
-        //            Player.CanPick = true;
-        //            ComputerWon = false;
-        //        }
-        //        if (cpuhealth >= 0)
-        //        {
-        //            AttackHitterThing = Random.Range(1, 5);
-        //            Player.PlayerGotHit = true;
-        //            Debug.Log("The Computer hit the player foooorr " + AttackHitterThing);
-        //            AttackHitterThing = 0;
-        //            ComputerWon = false;
-        //            Player.CanPick = true;
-        //            Player.PlayerIsReady = false;
-
-        //        }
-
-        //        if (ComputerGotHit == true)
-        //        {
-        //            cpuhealth -= Player.AttackRandomNumber;
-        //            ComputerGotHit = false;
-        //        }
-        //    }
-        //}
+        if (cpuhealth <= 0)
+        {
+            state = DEATH;
+        }
+    
     }
 
     void OnGUI()

@@ -25,7 +25,7 @@ public class Player : MonoBehaviour
     public const int HAS_PICKED = 3;
     public const int GETTING_ATTACKED = 4;
     public const int DEATH = 5;
-
+    public const int HAS_WON = 6;
 
     //const i swear
     public const int PICK_NONE = 0;
@@ -136,7 +136,7 @@ public class Player : MonoBehaviour
 
     void OnDeath()
     {
-
+        Debug.Log("Player Has Died");
         GUI.DrawTexture(new Rect(Screen.width / 2 - 50, 0, 80, 50), DeathTexture);
         if (GUI.Button(new Rect(Screen.width * .40f, Screen.height * .35f, 100, 100), "Player Again?"))
         {
@@ -144,6 +144,13 @@ public class Player : MonoBehaviour
             Debug.Log("Play Again was Picked.");
 
         }
+
+    }
+
+    void Winning()
+    {
+
+
 
     }
 
@@ -166,6 +173,10 @@ public class Player : MonoBehaviour
             case DEATH:
                 OnDeath();
                 break;
+            case HAS_WON:
+                Winning();
+                break;        
+    
         }
         //if (PlayerCanFight == true)
         //{
@@ -180,7 +191,7 @@ public class Player : MonoBehaviour
                           state == ATTACK_MAGIC ? "ATTACK_MAGIC" :
                           state == GETTING_ATTACKED ? "GETTING_ATTACKED" :
                           "IDFK";
-        GUI.Label(new Rect(10, 30, 500, 20), "Computer State: " + cpuState);
+        GUI.Label(new Rect(10, 30, 500, 20), "Player: " + cpuState);
     }
 }
 
