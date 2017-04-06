@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
     public static float PlayerHealth = 20;
     public static bool PlayerGotHit = false;
     public Sprite Base;
-    public Texture Rock,Paper, Scissors;
+    public Texture Rock,Paper, Scissors, DeathTexture;
 
     //const i swear
     public const int IDLE_PICK = 0;
@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
     public const int ATTACK_MAGIC = 2;
     public const int HAS_PICKED = 3;
     public const int GETTING_ATTACKED = 4;
+    public const int DEATH = 5;
 
 
     //const i swear
@@ -36,7 +37,7 @@ public class Player : MonoBehaviour
     public static int currentPick = PICK_NONE;
 
     void Start()
-    {
+    {   
 
     }
 
@@ -133,6 +134,20 @@ public class Player : MonoBehaviour
 
     }
 
+    void OnDeath()
+    {
+
+       GUI.DrawTexture(new Rect(Screen.width / 2 - 50, 0, 80, 50), DeathTexture);
+        if (GUI.Button(new Rect(Screen.width * .40f, Screen.height * .35f, 100, 100), "Player Again?"))
+        {
+            
+            Debug.Log("Play Again was Picked.");
+            
+        }
+
+    }
+
+
     void OnGUI()
     {
         // its the players turn
@@ -147,6 +162,9 @@ public class Player : MonoBehaviour
                 break;
             case ATTACK_MAGIC:
                 MagicButtons();
+                break;
+            case DEATH:
+                OnDeath();
                 break;
         }
         //if (PlayerCanFight == true)

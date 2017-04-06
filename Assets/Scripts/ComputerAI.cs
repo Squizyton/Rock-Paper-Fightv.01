@@ -19,6 +19,8 @@ public class ComputerAI : MonoBehaviour
     public static bool PickAgain = false;
     public float RandomGenerator = 0;
     public static bool ComputerGotHit = false;
+    public Texture DeathTexture;
+
 
     public const int PICK_NONE = 0;
     public const int PICK_ROCK = 1;
@@ -31,6 +33,9 @@ public class ComputerAI : MonoBehaviour
     public const int PICK = 2;
     public const int HAS_PICKED = 3;
     public const int GETTING_ATTACKED = 4;
+    public const int DEATH = 5;
+
+
 
     public static int state = IDLE;
     public static int currentPick = PICK_NONE;
@@ -38,7 +43,20 @@ public class ComputerAI : MonoBehaviour
 
 
     void Start()
+    { 
+    }
+
+    void Dying()
     {
+
+        GUI.DrawTexture(new Rect(Screen.width / 2 - 50, 0, 80, 50), DeathTexture);
+        if (GUI.Button(new Rect(Screen.width * .40f, Screen.height * .35f, 100, 100), "Player Again?"))
+        {
+
+            Debug.Log("Play Again was Picked.");
+
+        }
+
     }
 
     void PickComputer()
@@ -87,6 +105,7 @@ public class ComputerAI : MonoBehaviour
             case ATTACK:
                 Attacking();
                 break;
+        
         }
 
 
@@ -166,6 +185,14 @@ public class ComputerAI : MonoBehaviour
                           "IDFK";
         GUI.Label(new Rect(10, 10, 500, 20), "Computer State: " + cpuState);
         GUI.Label(new Rect(500, 10, 200, 20), "Computer's Health:" + cpuhealth);
+
+        switch (state)
+        {
+            case DEATH:
+                Dying();
+                break;
+
+        }
 
     }
 
