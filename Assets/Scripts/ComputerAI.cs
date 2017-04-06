@@ -156,7 +156,7 @@ public class ComputerAI : MonoBehaviour
 
     void OnGUI()
     {
-        GUI.Label(new Rect(500, 10, 100, 20), "Computer's Health:" + cpuhealth);
+        Debug.Log("OnGUI in ComputerAI Sanity Check");
         string cpuState = state == IDLE ? "IDLE" :
                           state == ATTACK ? "ATTACK" :
                           state == PICK ? "PICK" :
@@ -164,6 +164,7 @@ public class ComputerAI : MonoBehaviour
                           state == GETTING_ATTACKED ? "GETTING_ATTACKED" :
                           "IDFK";
         GUI.Label(new Rect(10, 10, 100, 20), "Computer State: " + cpuState);
+        GUI.Label(new Rect(500, 10, 200, 20), "Computer's Health:" + cpuhealth);
 
     }
 
