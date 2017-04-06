@@ -63,9 +63,10 @@ public class ComputerAI : MonoBehaviour
     }
     void Attacking()
     {
-
-
-
+        int ThisIsAnAttack = Random.Range(1, 5);
+        Player.GettingAttacked(ThisIsAnAttack);
+        state = IDLE;
+        Player.state = Player.IDLE_PICK; 
     }
     public static void TakeDamage(int damage)
     {

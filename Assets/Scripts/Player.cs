@@ -41,13 +41,18 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (PlayerGotHit == true)
-        {
-            PlayerHealth = -ComputerAI.AttackHitterThing;
-            PlayerGotHit = false;
-        }
+
     }
 
+   public static void GettingAttacked(int damage)
+    {
+
+        PlayerHealth -= damage;
+
+    }
+    
+
+    
 
     void renderButtons()
     {
@@ -82,6 +87,8 @@ public class Player : MonoBehaviour
 
         }
     }
+
+
 
     void AttackButtons()
     {
