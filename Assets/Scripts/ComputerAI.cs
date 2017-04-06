@@ -26,11 +26,13 @@ public class ComputerAI : MonoBehaviour
     public const int PICK_SCISSORS = 3;
 
 
-    const int IDLE = 0;
-    const int ATTACK = 1;
-    const int PICK = 2;
+    public const int IDLE = 0;
+    public const int ATTACK = 1;
+    public const int PICK = 2;
+    public const int HAS_PICKED = 3;
 
-    public int state = IDLE;
+
+    public static int state = IDLE;
     public static int currentPick = PICK_NONE;
 
 
@@ -56,7 +58,7 @@ public class ComputerAI : MonoBehaviour
                 break;
 
         }
-
+        state = HAS_PICKED;
 
     }
 
