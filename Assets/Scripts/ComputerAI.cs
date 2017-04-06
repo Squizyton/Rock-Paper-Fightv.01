@@ -163,7 +163,7 @@ public class ComputerAI : MonoBehaviour
                           state == HAS_PICKED ? "HAS_PICKED" :
                           state == GETTING_ATTACKED ? "GETTING_ATTACKED" :
                           "IDFK";
-        GUI.Label(new Rect(10, 10, 100, 20), "Computer State: " + cpuState);
+        GUI.Label(new Rect(10, 10, 200, 20), "Computer State: " + cpuState);
         GUI.Label(new Rect(500, 10, 200, 20), "Computer's Health:" + cpuhealth);
 
     }
