@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     public float PlayerHealth = 20;
     public static bool PlayerGotHit = false;
     public Sprite Base;
-    
+
     const int IDLE_PICK = 0;
     const int ATTACK = 1;
     const int ATTACK_MAGIC = 2;
@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
     void Update()
@@ -65,19 +65,33 @@ public class Player : MonoBehaviour
         }
     }
 
+
+    void AttackButtons()
+    {
+
+
+
+    }
+
+
+
+
+
     void OnGUI()
     {
         // its the players turn
 
-        switch(state)
+        switch (state)
         {
             case IDLE_PICK:
                 renderButtons();
                 break;
             case ATTACK:
+                AttackButtons();
+                break;
+            case ATTACK_MAGIC:
                 renderButtons();
                 break;
-
         }
         if (PlayerCanFight == true)
         {
