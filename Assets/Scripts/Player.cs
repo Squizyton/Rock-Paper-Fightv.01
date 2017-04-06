@@ -28,31 +28,6 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        /*if(CanPick 	== true)
-		{	
-			if(Input.GetKeyDown(KeyCode.R))
-				{
-					PlayerRock = true;
-					PlayerIsReady = true;
-					CanPick = false;
-				//This is a Debug Line. This does absolutely nothing but tell me if Code was working.
-				// V
-				Picked = true;
-			}
-				if(Input.GetKeyDown(KeyCode.P))
-					{
-						PlayerPaper = true;
-						PlayerIsReady = true;
-						CanPick = false;
-                Picked = true;
-            }
-					if(Input.GetKeyDown(KeyCode.S)) 
-						{
-							PlayerScizzors	 = true;
-							PlayerIsReady = true;
-							CanPick = false;
-						}		
-	*/
         if (PlayerGotHit == true)
         {
             PlayerHealth = -ComputerAI.AttackHitterThing;
