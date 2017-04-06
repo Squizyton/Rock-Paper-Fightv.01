@@ -9,7 +9,28 @@ public class RPSFigureOUt : MonoBehaviour
         if (Player.state == Player.HAS_PICKED && ComputerAI.state == ComputerAI.HAS_PICKED)
 
         {
+            int p = Player.currentPick;
+            int c = ComputerAI.currentPick;
+            int pr = Player.PICK_ROCK;
+            int pp = Player.PICK_PAPER;
+            int ps = Player.PICK_SCISSORS;
+            int cr = ComputerAI.PICK_ROCK;
+            int cp = ComputerAI.PICK_PAPER;
+            int cs = ComputerAI.PICK_SCISSORS;
+            int playerWon = 0;
+            int computerWon = 1;
+            int tie = 2;
 
+            int result =
+                p == pr ?
+                    c == cr ? tie :
+                    (c == cp ? computerWon : playerWon) :
+                p == pp ?
+                    c == cr ? playerWon :
+                    (c == cp ? tie : computerWon) :
+                c == cr ? computerWon :
+                    (c == cp ? playerWon : tie);
+                 
 
         }
                 //if (Player.PlayerRock == true && ComputerAI.CpuScizzors == true)
