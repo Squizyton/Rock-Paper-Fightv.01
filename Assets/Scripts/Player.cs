@@ -87,7 +87,27 @@ public class Player : MonoBehaviour
 
     }
 
+    void MagicButtons()
+    {
+        AttackButtons();
 
+        if (GUI.Button(new Rect(Screen.width * .35f, Screen.height * .16f, 100, 100), "Landslide"))
+        {
+        }
+
+        if (GUI.Button(new Rect(Screen.width * .15f, Screen.height * .15f, 100, 100), "Cure"))
+        {
+
+            if (PlayerHealth <= 20)
+            {
+                PlayerHealth += Random.Range(1, 7);
+                CanPick = true;
+                ComputerAI.Dontpickagain = false;
+
+            }
+        }
+
+    }
 
 
 
@@ -104,7 +124,7 @@ public class Player : MonoBehaviour
                 AttackButtons();
                 break;
             case ATTACK_MAGIC:
-                renderButtons();
+                MagicButtons();
                 break;
         }
         if (PlayerCanFight == true)
@@ -113,35 +133,8 @@ public class Player : MonoBehaviour
 
 
         }
-
-        if (FightMenu == false && SpellSelection == true)
-        {
-
-            if (GUI.Button(new Rect(Screen.width * .35f, Screen.height * .16f, 100, 100), "Landslide"))
-            {
-            }
-
-            if (GUI.Button(new Rect(Screen.width * .15f, Screen.height * .15f, 100, 100), "Cure"))
-            {
-
-                if (PlayerHealth <= 20)
-                {
-                    PlayerHealth += Random.Range(1, 7);
-                    CanPick = true;
-                    ComputerAI.Dontpickagain = false;
-
-                }
-            }
-
-            if (GUI.Button(new Rect(Screen.width * 0f, Screen.height * .0f, 100, 100), "Back"))
-            {
-
-                FightMenu = true;
-                SpellSelection = false;
-
-            }
-        }
     }
+}
 }
 
 
