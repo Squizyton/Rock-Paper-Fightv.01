@@ -17,9 +17,9 @@ public class RPSFigureOUt : MonoBehaviour
             int cr = ComputerAI.PICK_ROCK;
             int cp = ComputerAI.PICK_PAPER;
             int cs = ComputerAI.PICK_SCISSORS;
-            int playerWon = 0;
-            int computerWon = 1;
-            int tie = 2;
+            const int playerWon = 0;
+            const int computerWon = 1;
+           const int tie = 2;
 
             int result =
                 p == pr ?
@@ -30,71 +30,86 @@ public class RPSFigureOUt : MonoBehaviour
                     (c == cp ? tie : computerWon) :
                 c == cr ? computerWon :
                     (c == cp ? playerWon : tie);
-                 
+
+            switch (result)
+            {
+                case playerWon:
+                    Player.state == Player.ATTACK;
+                    break;
+                case computerWon:
+                    ComputerAI.state == ComputerAI.ATTACK;
+                   
+
+
+            }
 
         }
-                //if (Player.PlayerRock == true && ComputerAI.CpuScizzors == true)
-                //{
-                //    Player.PlayerCanFight = true;
-                //    Player.PlayerIsReady = false;
-                //    ComputerAI.CPUisReady = false;
-                //}
-                //if (Player.PlayerScizzors == true && ComputerAI.CpuPaper == true)
-                //{
-                //    Player.PlayerCanFight = true;
-                //    Player.PlayerIsReady = false;
-                //    ComputerAI.CPUisReady = false;
-                //}
-                //if (Player.PlayerPaper == true && ComputerAI.CpuRock == true)
-                //{
-                //    Player.PlayerCanFight = true;
-                //    Player.PlayerIsReady = false;
-                //    ComputerAI.CPUisReady = false;
-                //}
-                //if (Player.PlayerPaper == true && ComputerAI.CpuScizzors == true)
-                //{
-                //    ComputerAI.ComputerWon = true;
-                //    Player.PlayerIsReady = false;
-                //    ComputerAI.CPUisReady = false;
 
 
-            //}
-            //if (Player.PlayerScizzors == true && ComputerAI.CpuRock == true)
-            //{
-            //    ComputerAI.ComputerWon = true;
-            //    Player.PlayerIsReady = false;
-            //    ComputerAI.CPUisReady = false;
 
-            //}
-            //if (Player.PlayerRock == true && ComputerAI.CpuPaper == true)
-            //{
-            //    ComputerAI.ComputerWon = true;
-            //    Player.PlayerIsReady = false;
-            //    ComputerAI.CPUisReady = false;
-            //}
 
-            //if (Player.PlayerScizzors == true && ComputerAI.CpuScizzors == true)
-            //{
-            //    Player.CanPick = true;
-            //    ComputerAI.PickAgain = true;
-            //    Player.PlayerIsReady = false;
-            //    ComputerAI.CPUisReady = false;
+        //if (Player.PlayerRock == true && ComputerAI.CpuScizzors == true)
+        //{
+        //    Player.PlayerCanFight = true;
+        //    Player.PlayerIsReady = false;
+        //    ComputerAI.CPUisReady = false;
+        //}
+        //if (Player.PlayerScizzors == true && ComputerAI.CpuPaper == true)
+        //{
+        //    Player.PlayerCanFight = true;
+        //    Player.PlayerIsReady = false;
+        //    ComputerAI.CPUisReady = false;
+        //}
+        //if (Player.PlayerPaper == true && ComputerAI.CpuRock == true)
+        //{
+        //    Player.PlayerCanFight = true;
+        //    Player.PlayerIsReady = false;
+        //    ComputerAI.CPUisReady = false;
+        //}
+        //if (Player.PlayerPaper == true && ComputerAI.CpuScizzors == true)
+        //{
+        //    ComputerAI.ComputerWon = true;
+        //    Player.PlayerIsReady = false;
+        //    ComputerAI.CPUisReady = false;
 
-            //}
-            //if (Player.PlayerPaper == true && ComputerAI.CpuPaper == true)
-            //{
-            //    Player.CanPick = true;
-            //    ComputerAI.PickAgain = true;
-            //    Player.PlayerIsReady = false;
-            //    ComputerAI.CPUisReady = false;
-            //}
-            //if (Player.PlayerRock == true && ComputerAI.CpuRock == true)
-            //{
-            //    Player.CanPick = true;
-            //    ComputerAI.PickAgain = true;
-            //    Player.PlayerIsReady = false;
-            //    ComputerAI.CPUisReady = false;
-            //}
+
+        //}
+        //if (Player.PlayerScizzors == true && ComputerAI.CpuRock == true)
+        //{
+        //    ComputerAI.ComputerWon = true;
+        //    Player.PlayerIsReady = false;
+        //    ComputerAI.CPUisReady = false;
+
+        //}
+        //if (Player.PlayerRock == true && ComputerAI.CpuPaper == true)
+        //{
+        //    ComputerAI.ComputerWon = true;
+        //    Player.PlayerIsReady = false;
+        //    ComputerAI.CPUisReady = false;
+        //}
+
+        //if (Player.PlayerScizzors == true && ComputerAI.CpuScizzors == true)
+        //{
+        //    Player.CanPick = true;
+        //    ComputerAI.PickAgain = true;
+        //    Player.PlayerIsReady = false;
+        //    ComputerAI.CPUisReady = false;
+
+        //}
+        //if (Player.PlayerPaper == true && ComputerAI.CpuPaper == true)
+        //{
+        //    Player.CanPick = true;
+        //    ComputerAI.PickAgain = true;
+        //    Player.PlayerIsReady = false;
+        //    ComputerAI.CPUisReady = false;
+        //}
+        //if (Player.PlayerRock == true && ComputerAI.CpuRock == true)
+        //{
+        //    Player.CanPick = true;
+        //    ComputerAI.PickAgain = true;
+        //    Player.PlayerIsReady = false;
+        //    ComputerAI.CPUisReady = false;
+        //}
 
 
 
