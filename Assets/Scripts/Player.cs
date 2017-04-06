@@ -11,7 +11,6 @@ public class Player : MonoBehaviour
     public static bool CanPick = true;
     public bool Picked = false;
     public static bool PlayerWon = false;
-    public static float AttackRandomNumber = 0;
     public bool SpellSelection = false;
     public bool FightMenu = true;
     public float PlayerHealth = 20;
@@ -87,20 +86,18 @@ public class Player : MonoBehaviour
     void AttackButtons()
     {
 
-        if (GUI.Button(new Rect(Screen.width * .35f, Screen.height * .35f, 100, 100), "Fight"))
+        if (GUI.Button(new Rect(Screen.width * .35f, Screen.height * .35f, 100, 100), "Melee"))
         {
-            FightMenu = false;
-            AttackRandomNumber = Random.Range(1, 5);
-            ComputerAI.ComputerGotHit = true;
+            
+           int AttackRandomNumber = Random.Range(1,5);
+            ComputerAI.TakeDamage(AttackRandomNumber);
             Debug.Log("The computer was attacked for " + AttackRandomNumber);
             CanPick = true;
             ComputerAI.Dontpickagain = false;
         }
         if (GUI.Button(new Rect(Screen.width * .15f, Screen.height * .15f, 100, 100), "Magic"))
         {
-
-            FightMenu = false;
-            SpellSelection = true;
+            state = ATTACK_MAGIC;
         }
 
     }

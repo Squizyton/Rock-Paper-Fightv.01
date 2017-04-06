@@ -14,7 +14,7 @@ public class ComputerAI : MonoBehaviour
     public static bool CpuCanFight = false;
     public static bool CpuCanPick = true;
     public static bool ComputerWon = false;
-    public float cpuhealth = 20;
+    public static float cpuhealth = 20;
     public static bool Dontpickagain = false;
     public static bool PickAgain = false;
     public float RandomGenerator = 0;
@@ -61,6 +61,16 @@ public class ComputerAI : MonoBehaviour
         state = HAS_PICKED;
 
     }
+
+
+    public static void TakeDamage(int damage)
+    {
+
+        cpuhealth -= damage;
+
+
+    }
+
 
     void Update()
     {
