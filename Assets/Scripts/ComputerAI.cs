@@ -20,12 +20,20 @@ public class ComputerAI : MonoBehaviour
     public float RandomGenerator = 0;
     public static bool ComputerGotHit = false;
 
+    public const int PICK_NONE = 0;
+    public const int PICK_ROCK = 1;
+    public const int PICK_PAPER = 2;
+    public const int PICK_SCISSORS = 3;
+
 
     const int IDLE = 0;
     const int ATTACK = 1;
     const int PICK = 2;
 
     public int state = IDLE;
+    public static int currentPick = PICK_NONE;
+
+
 
     void Start()
     {
@@ -33,7 +41,21 @@ public class ComputerAI : MonoBehaviour
 
     void PickComputer()
     {
+        switch (Random.Range(1, 4))
+        {
 
+            case 1:
+
+                currentPick = PICK_ROCK;
+                break;
+            case 2:
+                currentPick = PICK_PAPER;
+                break;
+            case 3:
+                currentPick = PICK_SCISSORS;
+                break;
+
+        }
 
 
     }
@@ -104,20 +126,20 @@ public class ComputerAI : MonoBehaviour
                     Player.PlayerIsReady = false;
 
                 }
-            
-            if (ComputerGotHit == true)
-            {
-                cpuhealth -= Player.AttackRandomNumber;
-                ComputerGotHit = false;
+
+                if (ComputerGotHit == true)
+                {
+                    cpuhealth -= Player.AttackRandomNumber;
+                    ComputerGotHit = false;
+                }
             }
         }
     }
-}
 
-void OnGUI()
-{
-    GUI.Label(new Rect(500, 10, 100, 20), "Computer's Health:" + cpuhealth);
-}
+    void OnGUI()
+    {
+        GUI.Label(new Rect(500, 10, 100, 20), "Computer's Health:" + cpuhealth);
+    }
 
 
 }
