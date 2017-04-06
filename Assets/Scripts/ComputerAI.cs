@@ -108,7 +108,6 @@ public class ComputerAI : MonoBehaviour
                     AttackHitterThing = 0;
                     ComputerWon = false;
                     Player.CanPick = true;
-                    Dontpickagain = false;
                     Player.PlayerIsReady = false;
 
                 }
