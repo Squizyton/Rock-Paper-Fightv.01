@@ -61,6 +61,7 @@ public class Player : MonoBehaviour
     }
     void OnGUI()
     {
+        // its the players turn
         if (CanPick == true)
         {
 
@@ -86,7 +87,6 @@ public class Player : MonoBehaviour
                 PlayerIsReady = true;
                 CanPick = false;
                 Debug.Log("Scissors was picked!");
-
             }
         }
         if (PlayerCanFight == true)
