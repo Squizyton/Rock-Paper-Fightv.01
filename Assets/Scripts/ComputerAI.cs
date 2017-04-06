@@ -43,7 +43,7 @@ public class ComputerAI : MonoBehaviour
 
 
     void Start()
-    { 
+    {
     }
 
     void Dying()
@@ -85,7 +85,7 @@ public class ComputerAI : MonoBehaviour
         Player.GettingAttacked(ThisIsAnAttack);
         Debug.Log("Computer Hit Player for" + ThisIsAnAttack);
         state = IDLE;
-        Player.state = Player.IDLE_PICK; 
+        Player.state = Player.IDLE_PICK;
     }
     public static void TakeDamage(int damage)
     {
@@ -105,7 +105,7 @@ public class ComputerAI : MonoBehaviour
             case ATTACK:
                 Attacking();
                 break;
-        
+
         }
 
 

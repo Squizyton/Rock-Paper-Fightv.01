@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
     public static float PlayerHealth = 20;
     public static bool PlayerGotHit = false;
     public Sprite Base;
-    public Texture Rock,Paper, Scissors, DeathTexture;
+    public Texture Rock, Paper, Scissors, DeathTexture;
 
     //const i swear
     public const int IDLE_PICK = 0;
@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
     public static int currentPick = PICK_NONE;
 
     void Start()
-    {   
+    {
 
     }
 
@@ -46,15 +46,15 @@ public class Player : MonoBehaviour
 
     }
 
-   public static void GettingAttacked(int damage)
+    public static void GettingAttacked(int damage)
     {
 
         PlayerHealth -= damage;
 
     }
-    
 
-    
+
+
 
     void renderButtons()
     {
@@ -137,12 +137,12 @@ public class Player : MonoBehaviour
     void OnDeath()
     {
 
-       GUI.DrawTexture(new Rect(Screen.width / 2 - 50, 0, 80, 50), DeathTexture);
+        GUI.DrawTexture(new Rect(Screen.width / 2 - 50, 0, 80, 50), DeathTexture);
         if (GUI.Button(new Rect(Screen.width * .40f, Screen.height * .35f, 100, 100), "Player Again?"))
         {
-            
+
             Debug.Log("Play Again was Picked.");
-            
+
         }
 
     }
@@ -178,7 +178,7 @@ public class Player : MonoBehaviour
                           state == ATTACK ? "ATTACK" :
                           state == HAS_PICKED ? "HAS_PICKED" :
                           state == ATTACK_MAGIC ? "ATTACK_MAGIC" :
-                          state == GETTING_ATTACKED ? "GETTING_ATTACKED" : 
+                          state == GETTING_ATTACKED ? "GETTING_ATTACKED" :
                           "IDFK";
         GUI.Label(new Rect(10, 30, 500, 20), "Computer State: " + cpuState);
     }
