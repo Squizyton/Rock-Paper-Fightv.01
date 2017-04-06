@@ -143,10 +143,10 @@ public class Player : MonoBehaviour
                 MagicButtons();
                 break;
         }
-        if (PlayerCanFight == true)
-        {
-            GUI.Label(new Rect(10, 10, 100, 20), "Player Health:" + PlayerHealth);
-        }
+        //if (PlayerCanFight == true)
+        //{
+        //    GUI.Label(new Rect(10, 10, 100, 20), "Player Health:" + PlayerHealth);
+        //}
     }
 }
 
