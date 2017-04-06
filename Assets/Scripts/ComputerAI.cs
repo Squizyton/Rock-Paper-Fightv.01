@@ -21,11 +21,18 @@ public class ComputerAI : MonoBehaviour
     public static bool ComputerGotHit = false;
 
 
+    const int IDLE = 0;
+    const int ATTACK = 1;
+    const int PICK = 2;
+
+    public int state = IDLE;
+
     void Start()
     {
     }
     void Update()
     {
+
         if (PickAgain == true)
         {
             RandomPicker = Random.Range(1, 4);
