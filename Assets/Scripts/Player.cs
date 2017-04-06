@@ -23,6 +23,8 @@ public class Player : MonoBehaviour
     public const int ATTACK = 1;
     public const int ATTACK_MAGIC = 2;
     public const int HAS_PICKED = 3;
+    public const int GETTING_ATTACKED = 4;
+
 
     //const i swear
     public const int PICK_NONE = 0;

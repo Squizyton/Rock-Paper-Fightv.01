@@ -30,7 +30,7 @@ public class ComputerAI : MonoBehaviour
     public const int ATTACK = 1;
     public const int PICK = 2;
     public const int HAS_PICKED = 3;
-
+    public const int GETTING_ATTACKED = 4;
 
     public static int state = IDLE;
     public static int currentPick = PICK_NONE;

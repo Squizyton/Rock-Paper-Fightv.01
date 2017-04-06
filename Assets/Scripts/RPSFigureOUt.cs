@@ -28,9 +28,11 @@ public class RPSFigureOUt : MonoBehaviour
             {
                 case playerWon:
                     Player.state = Player.ATTACK;
+                    ComputerAI.state = ComputerAI.GETTING_ATTACKED;
                     break;
                 case computerWon:
                     ComputerAI.state = ComputerAI.ATTACK;
+                    Player.state = Player.GETTING_ATTACKED;
                     break;
                 case tie:
                     Player.state = Player.IDLE_PICK;
@@ -38,9 +40,6 @@ public class RPSFigureOUt : MonoBehaviour
                     ComputerAI.state = ComputerAI.IDLE;
                     ComputerAI.currentPick = ComputerAI.PICK_NONE;
                     break;
-
-
-
             }
 
 
