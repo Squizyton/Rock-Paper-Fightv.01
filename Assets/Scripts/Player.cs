@@ -18,19 +18,20 @@ public class Player : MonoBehaviour
     public static bool PlayerGotHit = false;
     public Sprite Base;
 
-    const int IDLE_PICK = 0;
-    const int ATTACK = 1;
-    const int ATTACK_MAGIC = 2;
-    const int HAS_PICKED = 3;
+    //const i swear
+    static int IDLE_PICK = 0;
+    static int ATTACK = 1;
+    static int ATTACK_MAGIC = 2;
+    static int HAS_PICKED = 3;
 
-    const int PICK_NONE = 0;
-    const int PICK_ROCK = 1;
-    const int PICK_PAPER = 2;
-    const int PICK_SCISSORS = 3;
+    //const i swear
+    static int PICK_NONE = 0;
+    static int PICK_ROCK = 1;
+    static int PICK_PAPER = 2;
+    static int PICK_SCISSORS = 3;
     
-
-    public int state = IDLE_PICK;
-    public int currentPick = PICK_NONE;
+    public static int state = IDLE_PICK;
+    public static int currentPick = PICK_NONE;
    
     void Start()
     {
