@@ -151,6 +151,16 @@ public class Player : MonoBehaviour
         //{
         //    GUI.Label(new Rect(10, 10, 100, 20), "Player Health:" + PlayerHealth);
         //}
+
+
+        // lil thing to show the state?
+        string cpuState = state == IDLE_PICK ? "IDLE" :
+                          state == ATTACK ? "ATTACK" :
+                          state == HAS_PICKED ? "HAS_PICKED" :
+                          state == ATTACK_MAGIC ? "ATTACK_MAGIC" :
+                          state == GETTING_ATTACKED ? "GETTING_ATTACKED" : 
+                          "IDFK";
+        GUI.Label(new Rect(10, 30, 500, 20), "Computer State: " + cpuState);
     }
 }
 
