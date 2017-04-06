@@ -61,24 +61,29 @@ public class ComputerAI : MonoBehaviour
         state = HAS_PICKED;
 
     }
-
-
-    public static void TakeDamage(int damage)
+    void Attacking()
     {
 
-        cpuhealth -= damage;
 
 
     }
-
+    public static void TakeDamage(int damage)
+    {
+        cpuhealth -= damage;
+    }
 
     void Update()
     {
-
         switch (Player.state)
         {
             case Player.HAS_PICKED:
                 PickComputer();
+                break;
+        }
+        switch (state)
+        {
+            case ATTACK:
+                Attacking();
                 break;
         }
 
