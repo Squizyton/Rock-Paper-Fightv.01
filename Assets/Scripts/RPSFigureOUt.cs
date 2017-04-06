@@ -19,25 +19,32 @@ public class RPSFigureOUt : MonoBehaviour
             int cs = ComputerAI.PICK_SCISSORS;
             const int playerWon = 0;
             const int computerWon = 1;
-           const int tie = 2;
+            const int tie = 2;
 
-    int result = p == pr ? c == cr ? tie : (c == cp ? computerWon : playerWon) : p == pp ? c == cr ?
-                playerWon : (c == cp ? tie : computerWon) : c == cr ? computerWon : (c == cp ? playerWon : tie);
+            int result = p == pr ? c == cr ? tie : (c == cp ? computerWon : playerWon) : p == pp ? c == cr ?
+                        playerWon : (c == cp ? tie : computerWon) : c == cr ? computerWon : (c == cp ? playerWon : tie);
 
             switch (result)
             {
                 case playerWon:
-                    Player.state == Player.ATTACK;
+                    Player.state = Player.ATTACK;
                     break;
                 case computerWon:
-                    ComputerAI.state == ComputerAI.ATTACK;
-                   
+                    ComputerAI.state = ComputerAI.ATTACK;
+                    break;
+                case tie:
+                    Player.state = Player.IDLE_PICK;
+                    Player.currentPick = Player.PICK_NONE;
+                    ComputerAI.state = ComputerAI.IDLE;
+                    ComputerAI.currentPick = ComputerAI.PICK_NONE;
+                    break;
+
 
 
             }
 
-            
-                 
+
+
 
 
         }
