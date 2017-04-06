@@ -30,14 +30,25 @@ public class ComputerAI : MonoBehaviour
     void Start()
     {
     }
+
+    void PickComputer()
+    {
+
+
+
+    }
+
     void Update()
     {
 
-        if (PickAgain == true)
+        switch (Player.state)
         {
-            RandomPicker = Random.Range(1, 4);
-            PickAgain = false;
+            case Player.HAS_PICKED:
+                PickComputer();
+                break;
         }
+
+
 
         if (Player.PlayerIsReady == true)
         {
@@ -101,10 +112,13 @@ public class ComputerAI : MonoBehaviour
             }
         }
     }
-    void OnGUI()
-    {
-        GUI.Label(new Rect(500, 10, 100, 20), "Computer's Health:" + cpuhealth);
-    }
+
+}
+
+void OnGUI()
+{
+    GUI.Label(new Rect(500, 10, 100, 20), "Computer's Health:" + cpuhealth);
+}
 
 
 }
