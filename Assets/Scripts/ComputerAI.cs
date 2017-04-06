@@ -65,6 +65,7 @@ public class ComputerAI : MonoBehaviour
     {
         int ThisIsAnAttack = Random.Range(1, 5);
         Player.GettingAttacked(ThisIsAnAttack);
+        Debug.Log("Computer Hit Player for" + ThisIsAnAttack);
         state = IDLE;
         Player.state = Player.IDLE_PICK; 
     }

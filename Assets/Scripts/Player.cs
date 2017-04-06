@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     public static float PlayerHealth = 20;
     public static bool PlayerGotHit = false;
     public Sprite Base;
+    public Texture Rock,Paper, Scissors;
 
     //const i swear
     public const int IDLE_PICK = 0;
@@ -56,7 +57,8 @@ public class Player : MonoBehaviour
 
     void renderButtons()
     {
-        if (GUI.Button(new Rect(Screen.width * .30f, Screen.height * .35f, 100, 100), "Rock"))
+        GUI.backgroundColor = new Color(0, 0, 0, 0);
+        if (GUI.Button(new Rect(Screen.width * .30f, Screen.height * .35f, 100, 100), Rock))
         {
             PlayerRock = true;
             PlayerIsReady = true;
@@ -65,7 +67,7 @@ public class Player : MonoBehaviour
             currentPick = PICK_ROCK;
             state = HAS_PICKED;
         }
-        if (GUI.Button(new Rect(Screen.width * .40f, Screen.height * .35f, 100, 100), "Paper"))
+        if (GUI.Button(new Rect(Screen.width * .40f, Screen.height * .35f, 100, 100), Paper))
         {
             PlayerPaper = true;
             PlayerIsReady = true;
@@ -76,7 +78,7 @@ public class Player : MonoBehaviour
 
         }
 
-        if (GUI.Button(new Rect(Screen.width * .50f, Screen.height * .35f, 100, 100), "Scissors"))
+        if (GUI.Button(new Rect(Screen.width * .50f, Screen.height * .35f, 100, 100), Scissors))
         {
             PlayerScizzors = true;
             PlayerIsReady = true;
