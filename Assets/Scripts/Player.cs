@@ -26,6 +26,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
+        
     }
 
     void Update()
@@ -36,35 +37,44 @@ public class Player : MonoBehaviour
             PlayerGotHit = false;
         }
     }
+
+
+    void renderButtons()
+    {
+        if (GUI.Button(new Rect(Screen.width * .30f, Screen.height * .35f, 100, 100), "Rock"))
+        {
+            PlayerRock = true;
+            PlayerIsReady = true;
+            CanPick = false;
+            Debug.Log("Rock was pick");
+        }
+        if (GUI.Button(new Rect(Screen.width * .40f, Screen.height * .35f, 100, 100), "Paper"))
+        {
+            PlayerPaper = true;
+            PlayerIsReady = true;
+            CanPick = false;
+            Debug.Log("Paper was Picked.");
+        }
+
+        if (GUI.Button(new Rect(Screen.width * .50f, Screen.height * .35f, 100, 100), "Scissors"))
+        {
+            PlayerScizzors = true;
+            PlayerIsReady = true;
+            CanPick = false;
+            Debug.Log("Scissors was picked!");
+        }
+    }
+
     void OnGUI()
     {
         // its the players turn
-        if (CanPick == true)
+
+        switch(state)
         {
+            case IDLE_PICK:
+                renderButtons();
+                break;
 
-            if (GUI.Button(new Rect(Screen.width * .30f, Screen.height * .35f, 100, 100), "Rock"))
-            {
-                PlayerRock = true;
-                PlayerIsReady = true;
-                CanPick = false;
-                Debug.Log("Rock was pick");
-            }
-            if (GUI.Button(new Rect(Screen.width * .40f, Screen.height * .35f, 100, 100), "Paper"))
-            {
-                PlayerPaper = true;
-                PlayerIsReady = true;
-                CanPick = false;
-                Debug.Log("Paper was Picked.");
-
-            }
-
-            if (GUI.Button(new Rect(Screen.width * .50f, Screen.height * .35f, 100, 100), "Scissors"))
-            {
-                PlayerScizzors = true;
-                PlayerIsReady = true;
-                CanPick = false;
-                Debug.Log("Scissors was picked!");
-            }
         }
         if (PlayerCanFight == true)
         {
