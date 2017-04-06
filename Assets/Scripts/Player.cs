@@ -130,11 +130,8 @@ public class Player : MonoBehaviour
         if (PlayerCanFight == true)
         {
             GUI.Label(new Rect(10, 10, 100, 20), "Player Health:" + PlayerHealth);
-
-
         }
     }
-}
 }
 
 
