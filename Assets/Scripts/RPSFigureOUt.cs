@@ -21,15 +21,10 @@ public class RPSFigureOUt : MonoBehaviour
             int computerWon = 1;
             int tie = 2;
 
-            int result =
-                p == pr ?
-                    c == cr ? tie :
-                    (c == cp ? computerWon : playerWon) :
-                p == pp ?
-                    c == cr ? playerWon :
-                    (c == cp ? tie : computerWon) :
-                c == cr ? computerWon :
-                    (c == cp ? playerWon : tie);
+            int result = p == pr ? c == cr ? tie : (c == cp ? computerWon : playerWon) : p == pp ? c == cr ?
+                playerWon : (c == cp ? tie : computerWon) : c == cr ? computerWon : (c == cp ? playerWon : tie);
+
+            
                  
 
         }
