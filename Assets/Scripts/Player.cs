@@ -30,8 +30,8 @@ public class Player : MonoBehaviour
     public const int PICK_PAPER = 2;
     public const int PICK_SCISSORS = 3;
 
-    public const int state = IDLE_PICK;
-    public const int currentPick = PICK_NONE;
+    public static int state = IDLE_PICK;
+    public static int currentPick = PICK_NONE;
 
     void Start()
     {

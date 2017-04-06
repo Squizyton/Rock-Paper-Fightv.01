@@ -104,7 +104,7 @@ public class ComputerAI : MonoBehaviour
                     Player.PlayerIsReady = false;
 
                 }
-            }
+            
             if (ComputerGotHit == true)
             {
                 cpuhealth -= Player.AttackRandomNumber;
@@ -112,7 +112,6 @@ public class ComputerAI : MonoBehaviour
             }
         }
     }
-
 }
 
 void OnGUI()
