@@ -21,15 +21,17 @@ public class Player : MonoBehaviour
     const int IDLE_PICK = 0;
     const int ATTACK = 1;
     const int ATTACK_MAGIC = 2;
+    const int HAS_PICKED = 3;
 
     const int PICK_NONE = 0;
     const int PICK_ROCK = 1;
     const int PICK_PAPER = 2;
     const int PICK_SCISSORS = 3;
+    
 
     public int state = IDLE_PICK;
     public int currentPick = PICK_NONE;
-
+   
     void Start()
     {
 
@@ -54,6 +56,7 @@ public class Player : MonoBehaviour
             CanPick = false;
             Debug.Log("Rock was pick");
             currentPick = PICK_ROCK;
+            state = HAS_PICKED;
         }
         if (GUI.Button(new Rect(Screen.width * .40f, Screen.height * .35f, 100, 100), "Paper"))
         {
@@ -62,6 +65,8 @@ public class Player : MonoBehaviour
             CanPick = false;
             Debug.Log("Paper was Picked.");
             currentPick = PICK_PAPER;
+            state = HAS_PICKED;
+
         }
 
         if (GUI.Button(new Rect(Screen.width * .50f, Screen.height * .35f, 100, 100), "Scissors"))
@@ -71,6 +76,8 @@ public class Player : MonoBehaviour
             CanPick = false;
             Debug.Log("Scissors was picked!");
             currentPick = PICK_SCISSORS;
+            state = HAS_PICKED;
+
         }
     }
 
